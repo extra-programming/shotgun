@@ -18,4 +18,6 @@ A project to sequence DNA
 
 ####Long Term Plans:
 * Sequence the DNA
-* Read about Jim Kent's GIGassembler
+* Read about [Jim Kent's GIGassembler](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC311095/)
+* Read http://en.wikipedia.org/wiki/Shotgun_sequencing
+* NASA's code standards (when life depends upon it) http://pixelscommander.com/wp-content/uploads/2014/12/P10.pdf
