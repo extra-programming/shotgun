@@ -14,6 +14,7 @@ A project to sequence DNA
 ####Short Term Plans:
 * Make DNA to sequence
 * Make tests
+* Think about animating (at least the recombining of long sequences), probably color-coded. Maybe long matching sequences would get highlighted before being dragged together.
 
 
 ####Long Term Plans:
