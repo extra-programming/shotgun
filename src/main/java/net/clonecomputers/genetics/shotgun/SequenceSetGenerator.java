@@ -102,8 +102,10 @@ public class SequenceSetGenerator {
 	}
 	
 	public String randomOtherBase(String currentBase) {
-		//TODO: make this work
-		return null;
+		//TODO: this could be a lot better and more efficient
+		String otherBase = basePairs[r.nextInt(4)];
+		if(otherBase.equals(currentBase)) return randomOtherBase(currentBase);
+		return otherBase;
 	}
 
 }
