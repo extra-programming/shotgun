@@ -19,7 +19,7 @@ A project to sequence DNA
 
 ####Short Term Plans:
 * Think about animating (at least the recombining of long sequences), probably color-coded. Maybe long matching sequences would get highlighted before being dragged together. Maybe we can learn from the [animated sorters](http://commons.wikimedia.org/wiki/Category:Animations_of_sort_algorithms). Note: google search [shotgun sequencing animation](http://www.google.com/search?client=safari&rls=en&q=shotgun+sequencing+animation&ie=UTF-8&oe=UTF-8) finds many potential videos and tutorials. (Including DNA Learning Center
-has [shotgun sequencing video](http://www.dnalc.org/view/15538-Genome-Sequencing-Shotgun-technique-3D-animation-with-no-audio.html) (needs flash) from Cold Spring Harbor Laboratory.)
+has basic [shotgun sequencing video](http://www.dnalc.org/view/15537-Shotgun-sequencing-and-dealing-with-repeat-sections-3D-animation-with-basic-narration.html) (needs flash) with links to other videos.)
 
 
 
