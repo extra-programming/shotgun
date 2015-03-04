@@ -29,9 +29,10 @@ has basic [shotgun sequencing video](http://www.dnalc.org/view/15537-Shotgun-seq
 ####Recommended reading
 * [Jim Kent's GigAssembler](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC311095/)
 * http://en.wikipedia.org/wiki/Shotgun_sequencing (also see 
-  http://en.wikipedia.org/wiki/DNA_sequencing_theory
-  http://en.wikipedia.org/wiki/DNA_sequencing_theory#Pairwise_end-sequencing
-  http://en.wikipedia.org/wiki/Sanger_sequencing ) (ps: note, "Chain Termination Method" produces reads with lengths of approx .5 to 1 kb)
+   * http://en.wikipedia.org/wiki/DNA_sequencing_theory
+   * http://en.wikipedia.org/wiki/DNA_sequencing_theory#Pairwise_end-sequencing
+   * http://en.wikipedia.org/wiki/Sanger_sequencing 
+  ) (ps: note, "Chain Termination Method" produces reads with lengths of approx .5 to 1 kb)
 * NASA's code standards (when life depends upon it) http://pixelscommander.com/wp-content/uploads/2014/12/P10.pdf
 * All kinds of [interactive animated algorithms] (http://www.cs.usfca.edu/~galles/visualization/Algorithms.html) (Flash and Java), including stacks, queues, binary search trees, sorters, etc. Better than the wikipedia animations because we can control speed, step forward &amp; backward, etc.  http://www.cs.usfca.edu/~galles/visualization/Algorithms.html
   * Add this link to wikipedia if it is not there!
