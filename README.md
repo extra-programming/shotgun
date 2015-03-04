@@ -17,7 +17,7 @@ A project to sequence DNA
 * Make tests
   *  How do we test random stuff? [This article](http://c2.com/cgi/wiki?UnitTestingRandomness) looks like a good place to start. See our "[testingDiscussion.md](http://github.com/extra-programming/shotgun/blob/master/testingDiscussion.md)" file in the same folder as this readme.
 
-####Short Term Plans:
+#### Short Term Plans:
 * Think about animating (at least the recombining of long sequences), probably color-coded. Maybe long matching sequences would get highlighted before being dragged together. Maybe we can learn from the [animated sorters](http://commons.wikimedia.org/wiki/Category:Animations_of_sort_algorithms). Note: google search [shotgun sequencing animation](http://www.google.com/search?client=safari&rls=en&q=shotgun+sequencing+animation&ie=UTF-8&oe=UTF-8) finds many potential videos and tutorials. (Including DNA Learning Center
 has basic [shotgun sequencing video](http://www.dnalc.org/view/15537-Shotgun-sequencing-and-dealing-with-repeat-sections-3D-animation-with-basic-narration.html) (needs flash) with links to other videos.)
 
@@ -32,6 +32,7 @@ has basic [shotgun sequencing video](http://www.dnalc.org/view/15537-Shotgun-seq
    * http://en.wikipedia.org/wiki/DNA_sequencing_theory
    * http://en.wikipedia.org/wiki/DNA_sequencing_theory#Pairwise_end-sequencing
    * http://en.wikipedia.org/wiki/Sanger_sequencing 
+ 
  ) (ps: note, "Chain Termination Method" produces reads with lengths of approx .5 to 1 kb)
 * NASA's code standards (when life depends upon it) http://pixelscommander.com/wp-content/uploads/2014/12/P10.pdf
 * All kinds of [interactive animated algorithms] (http://www.cs.usfca.edu/~galles/visualization/Algorithms.html) (Flash and Java), including stacks, queues, binary search trees, sorters, etc. Better than the wikipedia animations because we can control speed, step forward &amp; backward, etc.  http://www.cs.usfca.edu/~galles/visualization/Algorithms.html
