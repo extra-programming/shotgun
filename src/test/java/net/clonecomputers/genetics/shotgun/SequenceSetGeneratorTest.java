@@ -1,12 +1,12 @@
 package net.clonecomputers.genetics.shotgun;
 
 import static org.junit.Assert.*;
-
 import static java.lang.Math.*;
 
-import java.util.function.IntConsumer;
+import java.util.*;
+import java.util.function.*;
 
-import org.junit.Test;
+import org.junit.*;
 
 public class SequenceSetGeneratorTest {
 	
@@ -14,26 +14,26 @@ public class SequenceSetGeneratorTest {
 	public void testGenerateGenome() {  
 		int length = 1000000;
 		double requiredConfidence = 0.99;
-		String seq = new SequenceSetGenerator().generateGenome(length);
+		List<Base> seq = new SequenceSetGenerator().generateGenome(length);
 		int[] numsBasePairs = new int[4]; // a,c,g,t
-		seq.chars().forEach(new IntConsumer() {
+		seq.forEach(new Consumer<Base>() {
 			@Override
-			public void accept(int value) {
+			public void accept(Base value) {
 				switch(value) {
-				case 'a':
+				case A:
 					numsBasePairs[0]++;
 					break;
-				case 'c':
+				case C:
 					numsBasePairs[1]++;
 					break;
-				case 'g':
+				case G:
 					numsBasePairs[2]++;
 					break;
-				case 't':
+				case T:
 					numsBasePairs[3]++;
 					break;
 				default:
-					fail((char)value+" is not an acceptable base pair");
+					fail(value+" is not an acceptable base pair");
 				}
 			}
 		});

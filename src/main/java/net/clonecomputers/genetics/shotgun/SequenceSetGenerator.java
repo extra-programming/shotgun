@@ -4,20 +4,13 @@ import java.util.*;
 
 public class SequenceSetGenerator {
 	private final Random r;
-	public static final List<String> basePairs = Arrays.asList(
-			"a",
-			"c",
-			"t",
-			"g"
-	);
-	public static final String unreadableBasePair = "?";
 
-	public static void main(String[] args) {
+	public static void main(List<Base>[] args) {
 		SequenceSetGenerator gen = new SequenceSetGenerator();
-		Collection<String> sequences = gen.sliceGenomeIntoSequences(
+		Collection<List<Base>> sequences = gen.sliceGenomeIntoSequences(
 				gen.generateGenome(100000), 8, 100);
-		for(String s: sequences) {
-			System.out.printf("%d\t%s\n",s.length(),s);
+		for(List<Base> s: sequences) {
+			System.out.printf("%d\t%s\n",s.size(),s);
 		}
 	}
 	
@@ -34,12 +27,12 @@ public class SequenceSetGenerator {
 	 * @param length
 	 * @return
 	 */
-	public String generateGenome(int length) {
-		StringBuilder genome = new StringBuilder();
+	public List<Base> generateGenome(int length) {
+		List<Base> genome = new ArrayList<Base>();
 		for(int i = 0; i < length; i++) {
-			genome.append(basePairs.get(r.nextInt(basePairs.size())));
+			genome.add(Base.randomBase(r));
 		}
-		return genome.toString();
+		return genome;
 	}
 	
 	/**
@@ -50,21 +43,21 @@ public class SequenceSetGenerator {
 	 * @param maxSize the maximum size of each fragment
 	 * @return a bunch of fragments of {@code genome}
 	 */
-	public List<String> sliceGenomeIntoSequences(String genome,
+	public List<List<Base>> sliceGenomeIntoSequences(List<Base> genome,
 			int numCopies, int maxSize) {
-		List<String> sequences = new ArrayList<>();
+		List<List<Base>> sequences = new ArrayList<>();
 		for(int i = 0; i < numCopies; i++) {
 			sequences.add(genome);
 		}
 		while(true) {
-			List<String> newSequences = new LinkedList<>();
-			for(Iterator<String> it = sequences.iterator(); it.hasNext();) {
-				String s = it.next();
-				if(s.length() > maxSize) {
+			List<List<Base>> newSequences = new LinkedList<>();
+			for(Iterator<List<Base>> it = sequences.iterator(); it.hasNext();) {
+				List<Base> s = it.next();
+				if(s.size() > maxSize) {
 					it.remove();
-					int cutLoc = r.nextInt(s.length() - 1) + 1;
-					newSequences.add(s.substring(0, cutLoc));
-					newSequences.add(s.substring(cutLoc));
+					int cutLoc = r.nextInt(s.size() - 1) + 1;
+					newSequences.add(s.subList(0, cutLoc));
+					newSequences.add(s.subList(cutLoc, s.size()));
 				}
 			}
 			sequences.addAll(newSequences);
@@ -75,13 +68,13 @@ public class SequenceSetGenerator {
 	
 	/**
 	 * Corrupt a bunch of sequences of base pairs, to simulate the sequencing process. 
-	 * This is equivalent to calling {@link #corruptSequence(String, double, double) corruptSequence} on each sequence. 
+	 * This is equivalent to calling {@link #corruptSequence(List<Base>, double, double) corruptSequence} on each sequence. 
 	 * 
-	 * @see {@link #corruptSequence(String, double, double) corruptSequence}
+	 * @see {@link #corruptSequence(List<Base>, double, double) corruptSequence}
 	 */
-	public void corruptSequences(List<String> sequences,
+	public void corruptSequences(List<List<Base>> sequences,
 			double unreadableProbability, double misreadProbability) {
-		for(ListIterator<String> li = sequences.listIterator(); li.hasNext();) {
+		for(ListIterator<List<Base>> li = sequences.listIterator(); li.hasNext();) {
 			li.set(corruptSequence(li.next(), unreadableProbability, misreadProbability));
 		}
 	}
@@ -93,36 +86,24 @@ public class SequenceSetGenerator {
 	 * @param misreadProbability is the probability that a base pair is read as another base pair
 	 * @return the corrupted sequence
 	 */
-	public String corruptSequence(String sequence,
+	public List<Base> corruptSequence(List<Base> sequence,
 			double unreadableProbability, double misreadProbability) {
 		if(unreadableProbability + misreadProbability > 1) {
 			throw new IllegalArgumentException("Sum of probabilities cannot be greater than 1");
 		}
-		StringBuilder sb = new StringBuilder();
-		for(int i = 0; i < sequence.length(); i++) {
-			String basePair = sequence.substring(i, i+1);
+		List<Base> seq = new ArrayList<Base>();
+		for(int i = 0; i < sequence.size(); i++) {
+			Base basePair = sequence.get(i);
 			double outcome = r.nextDouble();
 			if(outcome < misreadProbability) {
-				sb.append(randomOtherBase(basePair));
+				seq.add(basePair.randomOtherBase(r));
 			} else if(r.nextDouble() < misreadProbability + unreadableProbability) {
-				sb.append(unreadableBasePair);
+				seq.add(Base.UNKNOWN);
 			} else {
-				sb.append(basePair);
+				seq.add(basePair);
 			}
 		}
-		return null;
-	}
-	
-	/**
-	 * Generate a random base that is not {@code currentBase}. 
-	 * @param currentBase
-	 * @return a random base that is not {@code currentBase}
-	 */
-	private String randomOtherBase(String currentBase) {
-		//TODO: this could be a lot better and more efficient
-		String otherBase = basePairs.get(r.nextInt(basePairs.size()));
-		if(otherBase.equals(currentBase)) return randomOtherBase(currentBase);
-		return otherBase;
+		return seq;
 	}
 
 }
