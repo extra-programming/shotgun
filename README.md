@@ -18,15 +18,21 @@ A project to sequence DNA
   *  How do we test random stuff? [This article](http://c2.com/cgi/wiki?UnitTestingRandomness) looks like a good place to start. See our "[testingDiscussion.md](http://github.com/extra-programming/shotgun/blob/master/testingDiscussion.md)" file in the same folder as this readme.
 
 #### Short Term Plans:
-* Think about animating (at least the recombining of long sequences), probably color-coded. Maybe long matching sequences would get highlighted before being dragged together. Maybe we can learn from the [animated sorters](http://commons.wikimedia.org/wiki/Category:Animations_of_sort_algorithms). Note: google search [shotgun sequencing animation](http://www.google.com/search?client=safari&rls=en&q=shotgun+sequencing+animation&ie=UTF-8&oe=UTF-8) finds many potential videos and tutorials. (Including DNA Learning Center
-has basic [shotgun sequencing video](http://www.dnalc.org/view/15537-Shotgun-sequencing-and-dealing-with-repeat-sections-3D-animation-with-basic-narration.html) (needs flash) with links to other videos.)
+* Begin to sequence the genome
+  * Find matching (or close-enough) ends of segments to assemble into subsequences
+  * Keep matching subsequences until the entire genome is sequenced
+   * What do we do about spurious matches?
+  * Maybe we should try this first with sequencing errors disabled?
 
 
 
 ####Long Term Plans:
-* Re-assemble the sequenced genome
+* Fully sequence the genome
+* Think about animating (at least the recombining of long sequences), probably color-coded. Maybe long matching sequences would get highlighted before being dragged together. Maybe we can learn from the [animated sorters](http://commons.wikimedia.org/wiki/Category:Animations_of_sort_algorithms). Note: google search [shotgun sequencing animation](http://www.google.com/search?client=safari&rls=en&q=shotgun+sequencing+animation&ie=UTF-8&oe=UTF-8) finds many potential videos and tutorials. (Including DNA Learning Center
+has basic [shotgun sequencing video](http://www.dnalc.org/view/15537-Shotgun-sequencing-and-dealing-with-repeat-sections-3D-animation-with-basic-narration.html) (needs flash) with links to other videos.)
 
 ####Recommended reading
+* [Wikipedia on String Searching](http://en.wikipedia.org/wiki/String_searching_algorithm) (for finding partial matches)
 * [Jim Kent's GigAssembler](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC311095/)
 * http://en.wikipedia.org/wiki/Shotgun_sequencing (also see 
    * http://en.wikipedia.org/wiki/DNA_sequencing_theory
