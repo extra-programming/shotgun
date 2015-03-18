@@ -34,6 +34,8 @@ has basic [shotgun sequencing video](http://www.dnalc.org/view/15537-Shotgun-seq
 ####Recommended reading
 * [Wikipedia on String Searching](http://en.wikipedia.org/wiki/String_searching_algorithm) (for finding partial matches)
    * The 'Moore' in the Boyer-Moore String Searching algorithm has a [usefull website](http://www.cs.utexas.edu/users/moore/best-ideas/string-searching/index.html), on which he links animations of [KPM](http://www.cs.utexas.edu/users/moore/best-ideas/string-searching/kpm-example.html) and [Boyer-Moore](http://www.cs.utexas.edu/users/moore/best-ideas/string-searching/fstrpos-example.html), a [paper describing his algorithm](http://www.cs.utexas.edu/users/moore/publications/fstrpos.pdf), and a [good algorithm for small alphabets](http://www.cs.utexas.edu/users/moore/publications/sustik-moore.pdf) (like DNA)
+   * [Approximate String Matching](http://en.wikipedia.org/wiki/Approximate_string_matching) is more like what we actually need to do.
+     * The [Bitap algorithm](http://en.wikipedia.org/wiki/Bitap_algorithm) is one way to do this.
 * [Jim Kent's GigAssembler](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC311095/)
 * http://en.wikipedia.org/wiki/Shotgun_sequencing (also see 
    * http://en.wikipedia.org/wiki/DNA_sequencing_theory
