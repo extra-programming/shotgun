@@ -21,7 +21,7 @@ A project to sequence DNA
 * Begin to sequence the genome
   * Find matching (or close-enough) ends of segments to assemble into subsequences
   * Keep matching subsequences until the entire genome is sequenced
-   * What do we do about spurious matches?
+    * What do we do about spurious matches?
   * Maybe we should try this first with sequencing errors disabled?
 
 
@@ -38,8 +38,7 @@ has basic [shotgun sequencing video](http://www.dnalc.org/view/15537-Shotgun-seq
    * http://en.wikipedia.org/wiki/DNA_sequencing_theory
    * http://en.wikipedia.org/wiki/DNA_sequencing_theory#Pairwise_end-sequencing
    * http://en.wikipedia.org/wiki/Sanger_sequencing 
- 
- ) (ps: note, "Chain Termination Method" produces reads with lengths of approx .5 to 1 kb)
+     * (ps: note, "Chain Termination Method" produces reads with lengths of approx .5 to 1 kb)
 * NASA's code standards (when life depends upon it) http://pixelscommander.com/wp-content/uploads/2014/12/P10.pdf
 * All kinds of [interactive animated algorithms] (http://www.cs.usfca.edu/~galles/visualization/Algorithms.html) (Flash and Java), including stacks, queues, binary search trees, sorters, etc. Better than the wikipedia animations because we can control speed, step forward &amp; backward, etc.  http://www.cs.usfca.edu/~galles/visualization/Algorithms.html
   * Add this link to wikipedia if it is not there!
