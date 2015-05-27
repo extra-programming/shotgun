@@ -28,6 +28,9 @@ public class SequenceSetGenerator {
 	 * @return
 	 */
 	public List<Base> generateGenome(int length) {
+		if(length < 0) {
+			throw new IllegalArgumentException("Length cannot be negative; passed "+length);
+		}
 		List<Base> genome = new ArrayList<Base>();
 		for(int i = 0; i < length; i++) {
 			genome.add(Base.randomBase(r));
@@ -45,6 +48,12 @@ public class SequenceSetGenerator {
 	 */
 	public List<List<Base>> sliceGenomeIntoSequences(List<Base> genome,
 			int numCopies, int maxSize) {
+		if(maxSize < 1) {
+			throw new IllegalArgumentException("maxSize must be positive (passed " + maxSize + ")");
+		}
+		if(numCopies < 1) {
+			throw new IllegalArgumentException("numCopes must be positive (passed " + numCopies + ")");
+		}
 		List<List<Base>> sequences = new ArrayList<>();
 		for(int i = 0; i < numCopies; i++) {
 			sequences.add(genome);
@@ -88,6 +97,9 @@ public class SequenceSetGenerator {
 	 */
 	public List<Base> corruptSequence(List<Base> sequence,
 			double unreadableProbability, double misreadProbability) {
+		if(unreadableProbability < 0 || unreadableProbability > 1 || misreadProbability < 0 || misreadProbability > 1) {
+			throw new IllegalArgumentException("probability out of bounds");
+		}
 		if(unreadableProbability + misreadProbability > 1) {
 			throw new IllegalArgumentException("Sum of probabilities cannot be greater than 1");
 		}
@@ -97,7 +109,7 @@ public class SequenceSetGenerator {
 			double outcome = r.nextDouble();
 			if(outcome < misreadProbability) {
 				seq.add(basePair.randomOtherBase(r));
-			} else if(r.nextDouble() < misreadProbability + unreadableProbability) {
+			} else if(outcome < misreadProbability + unreadableProbability) {
 				seq.add(Base.UNKNOWN);
 			} else {
 				seq.add(basePair);

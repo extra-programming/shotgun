@@ -24,10 +24,10 @@ public enum Base {
 
 	public boolean isOpposite(Base other) {
 		return this.isUnknown() || other.isUnknown() ||
-				other.equals(this.getOpposite(other));
+				other.equals(this.getOpposite());
 	}
 	
-	public Base getOpposite(Base other) {
+	public Base getOpposite() {
 		switch(this) {
 		case A:
 			return T;
@@ -40,7 +40,7 @@ public enum Base {
 		case UNKNOWN:
 			return UNKNOWN;
 		default:
-			throw new IllegalArgumentException("I've never heard of a base called "+other);
+			throw new IllegalStateException("Who the hell are we? (" + this + ")");
 		}
 	}
 
@@ -53,6 +53,7 @@ public enum Base {
 	}
 	
 	public Base randomOtherBase(Random r) {
-		return otherBases[r.nextInt(4)];
+		if(this.isUnknown()) throw new IllegalArgumentException("RandomOtherBase on UNKNOWN makes no sense");
+		return otherBases[r.nextInt(3)];
 	}
 }
